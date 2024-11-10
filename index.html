@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Personas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card shadow-sm p-4 mb-5 bg-white rounded">
+        <h2 class="text-center mb-4 text-primary">Registro de Personas</h2>
+        <form id="registroForm" novalidate>
+            <!-- Tipo de Identificación -->
+            <div class="form-group">
+                <label for="tipoIdentificacion" class="font-weight-bold">Tipo de Identificación</label>
+                <select class="form-control" id="tipoIdentificacion" name="tipoIdentificacion" required>
+                    <option value="">Seleccione</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="TI">Tarjeta de Identidad</option>
+                    <option value="CE">Cédula de Extranjería</option>
+                    <option value="PP">Pasaporte</option>
+                </select>
+                <div class="invalid-feedback">Seleccione un tipo de identificación.</div>
+            </div>
+
+            <!-- Número de Identificación -->
+            <div class="form-group">
+                <label for="numeroIdentificacion" class="font-weight-bold">Número de Identificación</label>
+                <input type="text" class="form-control" id="numeroIdentificacion" name="numeroIdentificacion" required pattern="\d+">
+                <div class="invalid-feedback">Ingrese solo números en el campo de identificación.</div>
+            </div>
+
+            <!-- Nombres -->
+            <div class="form-group">
+                <label for="nombres" class="font-weight-bold">Nombres</label>
+                <input type="text" class="form-control" id="nombres" name="nombres" required>
+                <div class="invalid-feedback">Ingrese sus nombres.</div>
+            </div>
+
+            <!-- Apellidos -->
+            <div class="form-group">
+                <label for="apellidos" class="font-weight-bold">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                <div class="invalid-feedback">Ingrese sus apellidos.</div>
+            </div>
+
+            <!-- Correo Electrónico -->
+            <div class="form-group">
+                <label for="email" class="font-weight-bold">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+                <div class="invalid-feedback">Ingrese un correo electrónico válido.</div>
+            </div>
+
+            <!-- Celular -->
+            <div class="form-group">
+                <label for="celular" class="font-weight-bold">Celular</label>
+                <input type="text" class="form-control" id="celular" name="celular" required pattern="\d+">
+                <div class="invalid-feedback">Ingrese solo números en el campo de celular.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block font-weight-bold">Registrar</button>
+            <div id="responseMessage" class="mt-3"></div>
+        </form>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
